@@ -2,6 +2,7 @@ package DBUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -28,24 +29,31 @@ public class DBUtil {
 		}
 		return connection;
 	}
-	public static void close(Connection connection, Statement statement, ResultSet resultset) {
-        if(resultset != null) {
+	public static void close(Connection conn, PreparedStatement pstmt, Statement stmt, ResultSet rs) {
+        if(rs != null) {
             try {
-                resultset.close();
+            	rs.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        if(statement != null) {
+        if(stmt != null) {
             try {
-                statement.close();
+            	stmt.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        if(connection != null) {
+        if(pstmt != null) {
             try {
-                connection.close();
+            	pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(conn != null) {
+            try {
+            	conn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
