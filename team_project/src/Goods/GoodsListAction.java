@@ -1,4 +1,4 @@
-package Goods.dao;
+package Goods;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -25,7 +25,7 @@ public class GoodsListAction extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(this.getClass()+"실행");
+		System.out.println(this.getClass()+"doGet 실행");
 		GoodsDao goodsdao = new GoodsDao();
 		ArrayList<Goods> goods = goodsdao.GoodsSelectAll();
 		request.setAttribute("goods", goods);

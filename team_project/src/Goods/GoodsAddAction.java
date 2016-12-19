@@ -1,4 +1,4 @@
-package Goods.dao;
+package Goods;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,35 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class GoodsAddAction
- */
-@WebServlet("/GoodsAddAction")
+@WebServlet("/goods/GoodsAdd.jbh")
 public class GoodsAddAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+ 
     public GoodsAddAction() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println(this.getClass()+"doGet 실행");
+		response.sendRedirect(request.getContextPath()+"/goods/Goods_add.jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println(this.getClass()+"doPost 실행");
+		GoodsDao dao = new GoodsDao();
+		
 	}
 
 }

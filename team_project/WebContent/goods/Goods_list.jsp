@@ -54,7 +54,7 @@ for (int i=0; i<agl.size(); i++) {
 %>
 	</table>
 	<div>
-		<a href="Goods_add.jsp">
+		<a href="<%=request.getContextPath()%>/goods/GoodsAdd.jbh">
 			<input type="submit" value="상품추가"/>
 		</a>
 	</div>

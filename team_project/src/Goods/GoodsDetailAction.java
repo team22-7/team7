@@ -1,4 +1,4 @@
-package Goods.dao;
+package Goods;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class GoodsModifyAction
+ * Servlet implementation class GoodsDetailAction
  */
-@WebServlet("/GoodsModifyAction")
-public class GoodsModifyAction extends HttpServlet {
+@WebServlet("/GoodsDetailAction")
+public class GoodsDetailAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GoodsModifyAction() {
+    public GoodsDetailAction() {
         super();
         // TODO Auto-generated constructor stub
     }

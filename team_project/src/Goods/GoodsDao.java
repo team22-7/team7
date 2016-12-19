@@ -1,4 +1,4 @@
-package Goods.dao;
+package Goods;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,8 +16,17 @@ public class GoodsDao {
 	ResultSet rs = null;
 	Goods goods = null;
 	ArrayList<Goods> agl = null;
-	//전체상품조회
+	//테이블 Goods
+	//기능 : 상품추가
+	public void GoodsInsert(Goods goods) {
+		System.out.println(this.getClass()+"상품추가 메서드");
+		
+	}
+	
+	//테이블 Goods
+	//기능 : 전체상품조회
 	public ArrayList<Goods> GoodsSelectAll () {
+		System.out.println(this.getClass()+"전체상품조회 메서드");
 		agl = new ArrayList<Goods>();
 		String sql = "SELECT goods_code, member_id, goods_name, "
 				+ "goods_cate, goods_price, goods_color, "
