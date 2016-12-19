@@ -22,18 +22,8 @@ public class GoodsListAction extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Connection conn = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		String sql = "SELECT goods_code, member_id, goods_name, goods_cate, goods_price, FROM goods";
-		try {
-			conn = DBUtil.getConnection();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			
-		}
+		
+		
 		
 	}
 
