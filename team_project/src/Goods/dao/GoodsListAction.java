@@ -25,11 +25,12 @@ public class GoodsListAction extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println(this.getClass()+"½ÇÇà");
 		GoodsDao goodsdao = new GoodsDao();
 		ArrayList<Goods> goods = goodsdao.GoodsSelectAll();
 		request.setAttribute("goods", goods);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"/goods/GoodsList.jsp");
+				"/goods/Goods_list.jsp");
 		rd.forward(request, response);
 	}
 

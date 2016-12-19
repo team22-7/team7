@@ -10,6 +10,7 @@
 <title>상품목록</title>
 </head>
 <body>
+실제 보여주는 내용은 권한별 제한적으로 보여줄것 지금은 테스트용으로 전체 조회.
 <%
 GoodsDao dao = new GoodsDao();
 ArrayList<Goods> agl = dao.GoodsSelectAll();
@@ -52,5 +53,16 @@ for (int i=0; i<agl.size(); i++) {
 }
 %>
 	</table>
+	<div>
+		<a href="Goods_add.jsp">
+			<input type="submit" value="상품추가"/>
+		</a>
+	</div>
+	<div>
+		<input type="submit" value="상품수정"/>
+	</div>
+	<div>
+		<input type="submit" value="상품삭제"/>
+	</div>
 </body>
 </html>
