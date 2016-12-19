@@ -16,13 +16,39 @@ public class GoodsDao {
 	ResultSet rs = null;
 	Goods goods = null;
 	ArrayList<Goods> agl = null;
+	/*컬럼명 12개
+	goods_code member_id goods_name goods_cate goods_price 
+	goods_color goods_buy_date goods_buy_count goods_stock goods_brand 
+	goods_size goods_buy_price*/
+	
 	//테이블 Goods
 	//기능 : 상품추가
 	public void GoodsInsert(Goods goods) {
 		System.out.println(this.getClass()+"상품추가 메서드");
-		
+		String sql = "INSERT INTO goods VALUES (?, ?, ?, ?, ?, "
+				+ "?, ?, ?, ?, ?, ?, ?)";
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, goods.getGoods_code());
+			pstmt.setString(2, goods.getMember_id());
+			pstmt.setString(3, goods.getGoods_name());
+			pstmt.setString(4, goods.getGoods_cate());
+			pstmt.setInt(5, goods.getGoods_price());
+			pstmt.setString(6, goods.getGoods_color());
+			pstmt.setString(7, goods.getGoods_buy_date());
+			pstmt.setInt(8, goods.getGoods_buy_count());
+			pstmt.setInt(9, goods.getGoods_stock());
+			pstmt.setString(10, goods.getGoods_brand());
+			pstmt.setInt(11, goods.getGoods_size());
+			pstmt.setInt(12, goods.getGoods_buy_price());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(conn, pstmt, null, null);
+		}
 	}
-	
 	//테이블 Goods
 	//기능 : 전체상품조회
 	public ArrayList<Goods> GoodsSelectAll () {
