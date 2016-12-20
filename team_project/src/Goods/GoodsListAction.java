@@ -30,12 +30,11 @@ public class GoodsListAction extends HttpServlet {
 		ArrayList<Goods> goods = goodsdao.GoodsSelectAll();
 		request.setAttribute("goods", goods);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"/goods/Goods_list.jsp");
+				"/goods/goodsList.jsp");
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	}
-
 }

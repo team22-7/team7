@@ -19,7 +19,7 @@ public class GoodsAddAction extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(this.getClass()+"doGet ½ÇÇà");
-		response.sendRedirect(request.getContextPath()+"/goods/Goods_add.jsp");
+		response.sendRedirect(request.getContextPath()+"/goods/goodsAdd.jsp");
 	}
 
 	

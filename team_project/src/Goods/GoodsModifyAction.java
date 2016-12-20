@@ -17,11 +17,7 @@ public class GoodsModifyAction extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(this.getClass()+"doGet ½ÇÇà");
-		
-		
-		
-		response.sendRedirect(request.getContextPath()+"/goods/Goods_modify.jsp");
-		
+		response.sendRedirect(request.getContextPath()+"/goods/goodsModify.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

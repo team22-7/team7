@@ -31,10 +31,10 @@ ArrayList<Goods> agl = dao.GoodsSelectAll();
 			<td>사이즈</td>
 			<td>매입가격</td>
 		</tr>
-<%
-for (int i=0; i<agl.size(); i++) {
-	Goods goods = agl.get(i);
-%>
+		<%
+		for (int i=0; i<agl.size(); i++) {
+			Goods goods = agl.get(i);
+		%>
 		<tr>
 			<td><%= goods.getGoods_code()%></td>
 			<td><%= goods.getMember_id()%></td>
@@ -54,7 +54,7 @@ for (int i=0; i<agl.size(); i++) {
 				</a>
 			</td>
 			<td>
-				<a href="<%=request.getContextPath()%>/goods/GoodsDetailAction.jbh?sendCode=<%= goods.getGoods_code()%>">
+				<a href="<%=request.getContextPath()%>/goods/GoodsDetailAction.jbh?sendCode=<%= goods.getGoods_code() %>">
 					상품수정
 				</a>
 			</td>
@@ -64,10 +64,9 @@ for (int i=0; i<agl.size(); i++) {
 				</a>
 			</td>
 		</tr>
-	
-<%
-}
-%>
+		<%
+		}
+		%>
 	</table>
 </body>
 </html>

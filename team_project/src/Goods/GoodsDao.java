@@ -20,6 +20,38 @@ public class GoodsDao {
 	goods_code member_id goods_name goods_cate goods_price 
 	goods_color goods_buy_date goods_buy_count goods_stock goods_brand 
 	goods_size goods_buy_price*/
+	//테이블 Goods
+	//기능 : 수정화면 보여주기 위한 하나의 컬럼값 조회
+	public Goods GoodsUpdateForSelect (String Goods) {
+		System.out.println(this.getClass()+"상품수정하기 위한 조회 메서드");
+		String sql = "SELECT * FROM goods WHERE goods_code=?";
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, Goods);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				goods = new Goods();
+				goods.setGoods_code(rs.getString("goods_code"));
+				goods.setMember_id(rs.getString("member_id"));
+				goods.setGoods_name(rs.getString("goods_name"));
+				goods.setGoods_cate(rs.getString("goods_cate"));
+				goods.setGoods_price(rs.getInt("goods_price"));
+				goods.setGoods_color(rs.getString("goods_color"));
+				goods.setGoods_buy_date(rs.getString("goods_buy_date"));
+				goods.setGoods_buy_count(rs.getInt("goods_buy_count"));
+				goods.setGoods_stock(rs.getInt("goods_stock"));
+				goods.setGoods_brand(rs.getString("goods_brand"));
+				goods.setGoods_size(rs.getInt("goods_size"));
+				goods.setGoods_buy_price(rs.getInt("goods_buy_price"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(conn, pstmt, null, rs);
+		}
+		return goods;
+	}
 	
 	//테이블 Goods
 	//기능 : 상품추가
