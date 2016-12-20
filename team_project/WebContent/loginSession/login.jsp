@@ -9,43 +9,42 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-	
-/* Remove the navbar's default margin-bottom and rounded borders */ 
-	.navbar {
-		margin-bottom: 0;
-		border-radius: 0;
-	}
-
-/* Add a gray background color and some padding to the footer */
+<title>Insert title here</title>
+<style>
 	footer {
 		background-color: #f2f2f2;
 		padding: 25px;
 	}
-  
-	.carousel-inner img {
-		width: 50%; /* Set width to 100% */
-		margin: auto;
-		min-height:200px;
-	}
-
-/* Hide the carousel text when the screen is less than 600 pixels wide */
-	@media (max-width: 100px) {
-	.carousel-caption {
-		display: none; 
-		}
-	}
-	</style>
-
+</style>
 </head>
 <body>
-
 <%@ include file="/module/top.jsp" %>
-
-<%@ include file="/module/slide.jsp" %>
-  
-<%@ include file="/module/mainImg.jsp" %>
-
+<div class="text-center">
+<h1>Login</h1>
+</div>
+	<form action="#" method="post">
+		<div class="text-center">
+			<div class="form-group">
+				<label for="usr">아이디</label>
+				<input type="text" class="form-control" id="usr" size="7">
+				<label for="pwd">비밀번호</label>
+				<input type="password" class="form-control" id="pwd" size="7">
+			</div>
+		
+		</div>
+		<div class="text-center">
+			<input type="submit" value="로그인"  >
+		</div>
+	</form>
+<div class="text-center">
+<div class="container">
+  <ul class="list-inline">
+    <li><a href="#">아이디찾기ㅣ</a></li>
+    <li><a href="#">비밀번호찾기ㅣ</a></li>
+    <li><a href="<%=request.getContextPath()%>/MemberAddAction.jbh">회원가입</a></li>
+    </ul>
+</div>
+</div>
 <%@ include file="/module/hadan.jsp" %>
 
 </body>
