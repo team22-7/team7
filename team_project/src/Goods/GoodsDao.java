@@ -22,6 +22,7 @@ public class GoodsDao {
 	goods_size goods_buy_price*/
 	//테이블 Goods
 	//기능 : 수정화면 보여주기 위한 하나의 컬럼값 조회
+	
 	public Goods GoodsUpdateForSelect (String Goods) {
 		System.out.println(this.getClass()+"상품수정하기 위한 조회 메서드");
 		String sql = "SELECT * FROM goods WHERE goods_code=?";
