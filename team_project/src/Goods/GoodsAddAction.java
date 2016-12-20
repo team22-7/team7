@@ -24,6 +24,7 @@ public class GoodsAddAction extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("euc-kr");
 		System.out.println(this.getClass()+"doPost ½ÇÇà");
 		GoodsDao dao = new GoodsDao();
 		

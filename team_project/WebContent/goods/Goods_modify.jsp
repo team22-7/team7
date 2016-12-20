@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>상품 수정</title>
 </head>
 <body>
+수정 테스트 화면
+<%-- <%
+String sendCode = request.getParameter("sendCode");
+System.out.println(this.getClass()+" sendCode :"+sendCode);
 
+%> --%>
 </body>
 </html>

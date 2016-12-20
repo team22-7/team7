@@ -48,21 +48,26 @@ for (int i=0; i<agl.size(); i++) {
 			<td><%= goods.getGoods_brand()%></td>
 			<td><%= goods.getGoods_size()%></td>
 			<td><%= goods.getGoods_buy_price()%></td>
+			<td>
+				<a href="<%=request.getContextPath()%>/goods/GoodsAdd.jbh">
+					상품추가
+				</a>
+			</td>
+			<td>
+				<a href="<%=request.getContextPath()%>/goods/GoodsDetailAction.jbh?sendCode=<%= goods.getGoods_code()%>">
+					상품수정
+				</a>
+			</td>
+			<td>
+				<a href="">
+					상품삭제
+				</a>
+			</td>
 		</tr>
+	
 <%
 }
 %>
 	</table>
-	<div>
-		<a href="<%=request.getContextPath()%>/goods/GoodsAdd.jbh">
-			<input type="submit" value="상품추가"/>
-		</a>
-	</div>
-	<div>
-		<input type="submit" value="상품수정"/>
-	</div>
-	<div>
-		<input type="submit" value="상품삭제"/>
-	</div>
 </body>
 </html>
